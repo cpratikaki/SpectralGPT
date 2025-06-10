@@ -775,20 +775,20 @@ class BigEarthNetImageDataset(SatelliteDataset):
         t.append(transforms.CenterCrop(input_size))
 
         return transforms.Compose(t)
+import pandas as pd
 
+class_map = {
+    'AnnualCrop': 0, 'Forest': 1, 'HerbaceousVegetation': 2,
+    'Highway': 3, 'Industrial': 4, 'Pasture': 5,
+    'PermanentCrop': 6, 'Residential': 7, 'River': 8, 'SeaLake': 9
+}
 class EuroSat(SatelliteDataset):
-    # mean = [1370.19151926, 1184.3824625, 1120.77120066, 1136.26026392,
-    #         1263.73947144, 1645.40315151, 1846.87040806, 1762.59530783,
-    #         1972.62420416, 582.72633433, 14.77112979, 1732.16362238, 1247.91870117]
-    # std = [633.15169573, 650.2842772, 712.12507725, 965.23119807,
-    #        948.9819932, 1108.06650639, 1258.36394548, 1233.1492281,
-    #        1364.38688993, 472.37967789, 14.3114637, 1310.36996126, 1087.6020813]
-
-    mean = [752.40087073, 884.29673756, 1144.16202635, 1297.47289228, 1624.90992062, 2194.6423161, 2422.21248945,
-                2517.76053101, 2581.64687018, 2645.51888987, 582.72633433, 2368.51236873, 1805.06846033]
-
-    std = [1108.02887453, 1155.15170768, 1183.6292542, 1368.11351514, 1370.265037, 1355.55390699, 1416.51487101,
-               1474.78900051, 1439.3086061, 1582.28010962, 472.37967789, 1455.52084939, 1343.48379601]
+    mean = [1370.19151926, 1184.3824625, 1120.77120066, 1136.26026392,
+            1263.73947144, 1645.40315151, 1846.87040806, 1762.59530783,
+            1972.62420416, 582.72633433, 14.77112979, 1732.16362238, 1247.91870117]
+    std = [633.15169573, 650.2842772, 712.12507725, 965.23119807,
+           948.9819932, 1108.06650639, 1258.36394548, 1233.1492281,
+           1364.38688993, 472.37967789, 14.3114637, 1310.36996126, 1087.6020813]
 
     def __init__(self, file_path, transform, masked_bands=None, dropped_bands=None):
         """
@@ -799,17 +799,18 @@ class EuroSat(SatelliteDataset):
         :param dropped_bands:  List of indices corresponding to which bands to drop from input image tensor
         """
         super().__init__(13)
-        with open(file_path, 'r') as f:
-            data = f.read().splitlines()
-        self.img_paths = [row.split()[0] for row in data]
-        self.labels = [int(row.split()[1]) for row in data]
+
+        # Load CSV with pandas to handle commas safely
+        df = pd.read_csv(file_path)
+        self.img_paths = df['path'].tolist()
+        self.labels = [class_map[label] for label in df['class']]
 
         self.transform = transform
-
         self.masked_bands = masked_bands
         self.dropped_bands = dropped_bands
         if self.dropped_bands is not None:
             self.in_c = self.in_c - len(dropped_bands)
+
 
     def __len__(self):
         return len(self.img_paths)
