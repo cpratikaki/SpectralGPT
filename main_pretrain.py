@@ -243,11 +243,11 @@ def main(args):
     misc.load_model(args=args, model_without_ddp=model_without_ddp, optimizer=optimizer, loss_scaler=loss_scaler)
     # misc.load_model_different_size(args=args, model_without_ddp=model_without_ddp, optimizer=optimizer, loss_scaler=loss_scaler)
 
-    # Set up wandb
-    if global_rank == 0 and args.wandb is not None:
-        wandb.init(project=args.wandb, entity="mae-sentinel")
-        wandb.config.update(args)
-        wandb.watch(model)
+    # # Set up wandb
+    # if global_rank == 0 and args.wandb is not None:
+    #     wandb.init(project=args.wandb, entity="mae-sentinel")
+    #     wandb.config.update(args)
+    #     wandb.watch(model)
 
     print(f"Start training for {args.epochs} epochs")
     start_time = time.time()
@@ -284,10 +284,10 @@ def main(args):
             with open(os.path.join(args.output_dir, "new_fmow_sep.txt"), mode="a", encoding="utf-8") as f:
                 f.write(json.dumps(log_stats) + "\n")
 
-            try:
-                wandb.log(log_stats)
-            except ValueError:
-                print(f"Invalid stats?")
+            # try:
+            #     wandb.log(log_stats)
+            # except ValueError:
+            #     print(f"Invalid stats?")
 
     total_time = time.time() - start_time
     total_time_str = str(datetime.timedelta(seconds=int(total_time)))
