@@ -26,7 +26,6 @@ import util.misc as misc
 from util.datasets import build_fmow_dataset
 from util.misc import NativeScalerWithGradNormCount as NativeScaler
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "4, 5, 6, 7"
 # os.environ["CUDA_VISIBLE_DEVICES"] = "0,1,2,3"
 
 import models_mae
