@@ -818,7 +818,7 @@ class EuroSat(SatelliteDataset):
     def open_image(self, img_path):
         # with rasterio.open('/home/ps/Documents/data/'+img_path) as data:
         #     img = data.read()  # (c, h, w)
-        img = io.imread('data/'+ img_path)
+        img = io.imread(img_path)
 
         # kid = (img - img.min(axis=(0, 1), keepdims=True))
         # mom = (img.max(axis=(0, 1), keepdims=True) - img.min(axis=(0, 1), keepdims=True))
