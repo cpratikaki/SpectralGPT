@@ -145,12 +145,12 @@ def train_one_epoch_temporal(model: torch.nn.Module,
             log_writer.add_scalar('lr', lr, epoch_1000x)
 
             # Use wandb
-            if args.local_rank == 0 and args.wandb is not None:
-                try:
-                    wandb.log({'train_loss_step': loss_value_reduce,
-                               'train_lr_step': lr, 'epoch_1000x': epoch_1000x})
-                except ValueError:
-                    pass
+            # if args.local_rank == 0 and args.wandb is not None:
+            #     try:
+            #         wandb.log({'train_loss_step': loss_value_reduce,
+            #                    'train_lr_step': lr, 'epoch_1000x': epoch_1000x})
+            #     except ValueError:
+            #         pass
 
     # gather the stats from all processes
     metric_logger.synchronize_between_processes()
