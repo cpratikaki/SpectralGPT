@@ -441,7 +441,7 @@ class MaskedAutoencoderViT(nn.Module):
         t = T // u
         target_whole = target1.reshape(N, t, h * w, 192)  # 2,4,256,192
         target_spatial = target_whole.sum(dim=1)  # 2,4,192
-        print(target_spatial.shape)
+        # print(target_spatial.shape)
         pred_whole = pred.reshape(N, t, h * w, 192)
         pred_spatial = pred_whole.sum(dim=1)
 
