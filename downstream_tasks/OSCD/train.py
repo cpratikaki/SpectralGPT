@@ -35,7 +35,7 @@ from model.models_vit_tensor_CD import vit_base_patch16
 from sync_batchnorm.batchnorm import convert_model
 
 # Global Variables' Definitions
-PATH_TO_DATASET = '/kaggle/working/oscd_test/Onera Satellite Change Detection dataset - Test Labels/'
+PATH_TO_DATASET = '/kaggle/working/oscd_test/Onera Satellite Change Detection dataset - Images/'
 WEIGHT_PATH = '/kaggle/working/SpectralGPT+.pth'  #
 IS_PROTOTYPE = False
 
