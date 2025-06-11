@@ -40,7 +40,7 @@ WEIGHT_PATH = '/kaggle/working/SpectralGPT+.pth'  #
 IS_PROTOTYPE = False
 
 PRETRAIN = False
-BATCH_SIZE = 2
+BATCH_SIZE = 8
 PATCH_SIDE = 128
 N_EPOCHS = 300
 L = 1024
