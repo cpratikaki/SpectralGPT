@@ -8,7 +8,7 @@ import os
 import datetime
 
 # os.environ["CUDA_VISIBLE_DEVICES"] = "0,1,2,3"
-os.environ["CUDA_VISIBLE_DEVICES"] = "4,5,6,7"
+# os.environ["CUDA_VISIBLE_DEVICES"] = "4,5,6,7"
 # os.environ["CUDA_VISIBLE_DEVICES"] = "6,7"
 from util.pos_embed import interpolate_pos_embed
 import numpy as np
@@ -35,8 +35,8 @@ from model.models_vit_tensor_CD import vit_base_patch16
 from sync_batchnorm.batchnorm import convert_model
 
 # Global Variables' Definitions
-PATH_TO_DATASET = 'data/merge/'
-WEIGHT_PATH = './model/checkpoint-14.pth'  #
+PATH_TO_DATASET = '/kaggle/working/oscd_test/Onera Satellite Change Detection dataset - Test Labels'
+WEIGHT_PATH = '/kaggle/working/SpectralGPT+.pth'  #
 IS_PROTOTYPE = False
 
 PRETRAIN = False
@@ -167,8 +167,8 @@ elif TYPE == 4:
         # checkpoint_model = checkpoint['model']
 
         checkpoint = torch.load(
-            '/media/ps/sda1/LXY/SatMAE-main/SatMAE-main/SatMAE-main/experiments/pretrain/BE_sep/checkpoint-100.pth',
-            map_location='cpu')  # /media/ps/sda1/liyuxuan/change_detection/model/checkpoint-150.pth
+            '/kaggle/working/SpectralGPT+.pth',
+            map_location='cpu', weights_only=False)  # /media/ps/sda1/liyuxuan/change_detection/model/checkpoint-150.pth
 
         # checkpoint_model = checkpoint
         # checkpoint_model = {k.replace('module.', ''): v for k, v in checkpoint_model.items()}
