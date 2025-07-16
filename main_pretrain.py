@@ -87,7 +87,7 @@ def get_args_parser():
     parser.add_argument('--train_path', default='', type=str,
                         help='Train.csv path')
     parser.add_argument('--dataset_type', default='sentinel',
-                        choices=['rgb',  'sentinel', 'euro_sat', 'bigearthnet'],
+                        choices=['rgb',  'sentinel', 'euro_sat', 'bigearthnet', 'superres'],
                         help='Whether to use fmow rgb, sentinel, or other dataset.')
     parser.add_argument('--masked_bands', type=int, nargs='+', default=None,
                         help='Sequence of band indices to mask (with mean val) in sentinel dataset')
@@ -196,7 +196,7 @@ def main(args):
                                                 in_chans=dataset_train.in_c,
                                                 norm_pix_loss=args.norm_pix_loss)
     if args.resume_different_size:
-        checkpoint = torch.load(args.resume_different_size, map_location='cpu')
+        checkpoint = torch.load(args.resume_different_size, map_location='cpu', weights_only=False)
 
         print("Load pre-trained_size checkpoint from: %s" % args.resume_different_size)
         checkpoint_model = checkpoint['model']
@@ -239,9 +239,12 @@ def main(args):
     optimizer = torch.optim.AdamW(param_groups, lr=args.lr, betas=(0.9, 0.95))
     print(optimizer)
     loss_scaler = NativeScaler()
+    
 
     misc.load_model(args=args, model_without_ddp=model_without_ddp, optimizer=optimizer, loss_scaler=loss_scaler)
     # misc.load_model_different_size(args=args, model_without_ddp=model_without_ddp, optimizer=optimizer, loss_scaler=loss_scaler)
+    optimizer = torch.optim.AdamW(param_groups, lr=args.lr, betas=(0.9, 0.95))
+
 
     # # Set up wandb
     # if global_rank == 0 and args.wandb is not None:
@@ -270,7 +273,7 @@ def main(args):
                 args=args
             )
 
-        if args.output_dir and (epoch % 1 == 0 or epoch + 1 == args.epochs):
+        if args.output_dir and (epoch % 5 == 0 or epoch + 1 == args.epochs):
             misc.save_model(
                 args=args, model=model, model_without_ddp=model_without_ddp, optimizer=optimizer,
                 loss_scaler=loss_scaler, epoch=epoch)

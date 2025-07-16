@@ -219,9 +219,9 @@ class ChangeDetectionDataset(Dataset):
 
         if train:
             # fname = 'train.txt'
-            fname = 'train2.txt'
+            fname = 'train.txt'
         else:
-            fname = 'train2.txt'
+            fname = 'train.txt'
 
         #         print(path + fname)
         self.names = read_csv(path + fname).columns  # 所有影像的名字

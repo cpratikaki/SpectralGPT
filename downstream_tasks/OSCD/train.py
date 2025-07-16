@@ -35,12 +35,12 @@ from model.models_vit_tensor_CD import vit_base_patch16
 from sync_batchnorm.batchnorm import convert_model
 
 # Global Variables' Definitions
-PATH_TO_DATASET = '/kaggle/working/oscd/Onera Satellite Change Detection dataset - Images/'
-WEIGHT_PATH = '/kaggle/working/SpectralGPT+.pth'  #
+PATH_TO_DATASET =  '/home/tiiairc/GenAI/Datasets/Onera Satellite Change Detection dataset - Images/'#'/kaggle/working/oscd/Onera Satellite Change Detection dataset - Images/'
+WEIGHT_PATH = '/home/tiiairc/GenAI/Checkpoints/SpectralGPT+.pth' #'/home/tiiairc/GenAI/Checkpoints/SpectralGPT+.pth'# '/kaggle/working/SpectralGPT+.pth'  #
 IS_PROTOTYPE = False
 
-PRETRAIN = False
-BATCH_SIZE = 8
+PRETRAIN = True
+BATCH_SIZE = 4
 PATCH_SIDE = 128
 N_EPOCHS = 300
 L = 1024
@@ -51,6 +51,12 @@ LOAD_TRAINED = False
 DATA_AUG = True
 device = "cuda"
 DICE = False
+# User-defined output directory
+OUTPUT_DIR = "change_frozen_only_enc"
+
+# Create it if it doesn't exist
+os.makedirs(OUTPUT_DIR, exist_ok=True)
+
 
 
 # print('DEFINITIONS OK')
@@ -167,13 +173,13 @@ elif TYPE == 4:
         # checkpoint_model = checkpoint['model']
 
         checkpoint = torch.load(
-            '/kaggle/working/SpectralGPT+.pth',
+            WEIGHT_PATH,
             map_location='cpu', weights_only=False)  # /media/ps/sda1/liyuxuan/change_detection/model/checkpoint-150.pth
 
-        # checkpoint_model = checkpoint
+        checkpoint_model = checkpoint
         # checkpoint_model = {k.replace('module.', ''): v for k, v in checkpoint_model.items()}
 
-        checkpoint_model = checkpoint['model']
+        # checkpoint_model = checkpoint['model']
 
         state_dict = net.state_dict()
         for k in ['pos_embed', 'patch_embed.proj.weight', 'patch_embed.proj.bias', 'head.weight', 'head.bias']:
@@ -191,6 +197,7 @@ elif TYPE == 4:
         net.load_state_dict(checkpoint_model, strict=False)
         msg = net.load_state_dict(checkpoint_model, strict=False)
         print(msg)
+        print('loaded', WEIGHT_PATH)
 # for n, p in net.named_parameters():
 #    if 'block' in n:
 #        p.requires_grad = False
@@ -198,7 +205,22 @@ elif TYPE == 4:
 net = convert_model(net)
 net = torch.nn.parallel.DataParallel(net.to(device))
 
+
+for name, param in net.named_parameters():
+
+    if (
+       name.startswith("module.blocks")
+    ):
+        param.requires_grad = False
+print("Trainable weights:")
+for name, param in net.named_parameters():
+    if param.requires_grad:
+        print(f"{name}: {param.shape}")
+
+
 criterion = nn.NLLLoss(weight=weights)  # to be used with logsoftmax output
+
+
 # criterion = nn.CrossEntropyLoss(weight=weights)
 
 print('NETWORK OK')
@@ -210,9 +232,11 @@ def count_parameters(model):
 
 print('Number of trainable parameters:', count_parameters(net))
 
-results_file = "results{}.txt".format(datetime.datetime.now().strftime("%Y%m%d-%H%M%S"))
+# results_file = "results{}.txt".format(datetime.datetime.now().strftime("%Y%m%d-%H%M%S"))
 # results_file = "vit_random.txt"
+# results_file = "change_default.txt"
 
+results_file = os.path.join(OUTPUT_DIR, "change_default.txt")
 
 
 def train(n_epochs=N_EPOCHS, save=True):
@@ -252,7 +276,7 @@ def train(n_epochs=N_EPOCHS, save=True):
     # optimizer = torch.optim.SGD(net.parameters(), lr=0.01, weight_decay=1e-6)
     #     optimizer = torch.optim.Adam(net.parameters(), lr=0.0005)
 
-    scheduler = torch.optim.lr_scheduler.ExponentialLR(optimizer, 0.95, verbose=True)
+    scheduler = torch.optim.lr_scheduler.ExponentialLR(optimizer, 0.95)
     # scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=5,gamma=0.1,verbose=True)
 
     for epoch_index in tqdm(range(n_epochs)):
@@ -301,6 +325,7 @@ def train(n_epochs=N_EPOCHS, save=True):
             print('train_loss: %s' % epoch_test_loss[epoch_index], file=f)
             print('train_nochange_accuracy: %s' % cl_acc[0], file=f)
             print('train_change_accuracy: %s' % cl_acc[1], file=f)
+            print('train_precision: %s' % pr_rec[0], file=f)
             print('train_recall: %s' % pr_rec[1], file=f)
             print('train_Fmeasure: %s' % pr_rec[2], file=f)
 
@@ -323,6 +348,7 @@ def train(n_epochs=N_EPOCHS, save=True):
             print('test_loss: %s' % epoch_test_loss[epoch_index], file=f)
             print('test_nochange_accuracy: %s' % cl_acc[0], file=f)
             print('test_change_accuracy: %s' % cl_acc[1], file=f)
+            print('test_precision: %s' % pr_rec[0], file=f)
             print('test_recall: %s' % pr_rec[1], file=f)
             print('test_Fmeasure: %s' % pr_rec[2], file=f)
         plt.figure(num=1)
@@ -385,8 +411,10 @@ def train(n_epochs=N_EPOCHS, save=True):
         plt.title('Precision, Recall and F-measure')
         display.clear_output(wait=True)
         display.display(plt.gcf())
-        every_epoch = 'vit' + str(epoch_index + 1) + '.pth'
-        torch.save(net.state_dict(), every_epoch)
+        every_epoch = os.path.join(OUTPUT_DIR, f'vit{epoch_index + 1}.pth')
+        # every_epoch = 'vit' + str(epoch_index + 1) + '.pth'
+        if epoch_index % 9 ==0:
+            torch.save(net.state_dict(), every_epoch)
 
         # mean_acc = (epoch_test_nochange_accuracy[epoch_index] + epoch_test_change_accuracy[epoch_index])/2
         # if mean_acc > best_mean_acc:

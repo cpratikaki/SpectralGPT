@@ -35,7 +35,7 @@ class SegDataset(data.Dataset):
         image_dir = os.path.join(image_root, mode, 'img')
         mask_dir = os.path.join(image_root, mode, 'label')
 
-        txt_path = os.path.join(image_root, "dataset", txt_name)
+        txt_path = os.path.join(image_root, txt_name)
         assert os.path.exists(txt_path), "file '{}' does not exist.".format(txt_path)
         with open(os.path.join(txt_path), "r") as f:
             file_names = [x.strip() for x in f.readlines() if len(x.strip()) > 0]

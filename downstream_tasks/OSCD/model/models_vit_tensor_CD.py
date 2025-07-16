@@ -847,7 +847,7 @@ def vit_base_patch16(**kwargs):
         in_chans=1,
         patch_size=8,
         embed_dim=768,
-        depth=12,
+        depth=4,
         num_heads=12,
         mlp_ratio=4,
         num_frames=12,

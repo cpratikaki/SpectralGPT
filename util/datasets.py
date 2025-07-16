@@ -845,6 +845,63 @@ class EuroSat(SatelliteDataset):
         return img_as_tensor, label
 
 
+
+class SentinelSuperResolutionDataset(Dataset):
+    def __init__(self):
+        super().__init__()
+        """
+        Dataset for Sentinel Super-Resolution from paired low and high resolution patches.
+        :param low_res_root: Path to directory with 128×128 patches (e.g. OSCD_output_patches_128)
+        :param high_res_root: Path to directory with 256×256 patches (e.g. OSCD_output_patches)
+        :param transform_lr: Transform to apply to low-resolution image (Tensor conversion, normalization, etc.)
+        :param transform_hr: Transform to apply to high-resolution image
+        """
+        self.low_res_root = "/home/tiiairc/GenAI/Datasets/OSCD_output_patches_128"
+        self.high_res_root = "/home/tiiairc/GenAI/Datasets/OSCD_output_patches"
+
+        self.low_res_root = '/home/tiiairc/GenAI/Datasets/argyro_patches/'
+        self.high_res_root = '/home/tiiairc/GenAI/Datasets/argyro_patches/'
+      
+     
+        # Collect all image file paths (assumes all are .tif)
+        self.samples = []
+        for root, _, files in os.walk(self.low_res_root):
+            for file in files:
+                if file.lower().endswith('.tif'):
+                    city = os.path.relpath(root, self.low_res_root)
+                    low_path = os.path.join(root, file)
+                    high_path = os.path.join(self.high_res_root, city, file)
+                    if os.path.exists(high_path):
+                        self.samples.append((low_path, high_path))
+                    else:
+                        print(f"⚠️ Warning: Missing high-res for {file}")
+
+    def __len__(self):
+        return len(self.samples)
+
+    def load_image(self, path):
+        img = io.imread(path)  # shape: (H, W, C)
+        # Normalize per-channel to [0, 1] using min-max normalization
+        kid = (img - img.min(axis=(0, 1), keepdims=True))
+        mom = (img.max(axis=(0, 1), keepdims=True) - img.min(axis=(0, 1), keepdims=True) + 1e-10)
+        img = kid / mom
+        return img.astype(np.float32)
+
+    def __getitem__(self, idx):
+        low_path, high_path = self.samples[idx]
+
+        # Load and normalize
+        img_lr = self.load_image(low_path)
+        img_hr = self.load_image(high_path)
+
+        # img_lr = self.transform(img_lr)
+        img_lr = torch.from_numpy(img_lr.transpose(2, 0, 1))  # [C, H, W]
+        img_hr = torch.from_numpy(img_hr.transpose(2, 0, 1))  # [C, H, W]
+
+        return img_lr, img_hr
+    
+
+
 def build_fmow_dataset(is_train: bool, args) -> SatelliteDataset:
     """
     Initializes a SatelliteDataset object given provided args.
@@ -884,6 +941,13 @@ def build_fmow_dataset(is_train: bool, args) -> SatelliteDataset:
         mean, std = EuroSat.mean, EuroSat.std
         transform = EuroSat.build_transform(is_train, args.input_size, mean, std)
         dataset = EuroSat(csv_path, transform, masked_bands=args.masked_bands, dropped_bands=args.dropped_bands)
+
+    elif args.dataset_type == 'superres':
+   
+        dataset = SentinelSuperResolutionDataset()
+        low, high = dataset[0]
+        print(low.shape, high.shape) 
+
     else:
         raise ValueError(f"Invalid dataset type: {args.dataset_type}")
     print(dataset)

@@ -249,8 +249,10 @@ class VisionTransformer(nn.Module):
         x = x1
         # x = x[:, :-1, :, :]  # 切片处理数据维度
         x = torch.unsqueeze(x, dim=1)
+        # print('beforepatch', x.shape)
         x = self.patch_embed(x)
         N, T, L, C = x.shape  # T: temporal; L: spatial
+        # print('x', x.shape)
 
         x = x.view([N, T * L, C])
 
@@ -280,6 +282,8 @@ class VisionTransformer(nn.Module):
             pos_embed = self.pos_embed[:, :, :]
         x = x + pos_embed
 
+        # print(x.shape)
+
         # reshape to [N, T, L, C] or [N, T*L, C]
         requires_t_shape = (
                 len(self.blocks) > 0  # support empty decoder
@@ -302,11 +306,14 @@ class VisionTransformer(nn.Module):
             #     seg4 = x
 
         B = x.shape[0]
+     
         # xx1 = x.view([N, T, L, C])
         seg1 = seg1.view([N, T, L, C])
         seg1 = seg1.permute(0, 2, 3, 1)
         seg1 = self.fc(seg1)
         seg1 = seg1.reshape(B, 16, 16, 768).permute(0, 3, 1, 2).contiguous()
+
+        # print(seg1.shape, 'seg1')
 
 
         m = {}
@@ -323,10 +330,16 @@ class VisionTransformer(nn.Module):
         # m[3] = self.conv3(x)  # 2048,16,16
         m[3] = self.conv3(seg1)  # 2048,16,16
 
+        # print('conv shapes', m[0].shape,  m[1].shape, m[2].shape, m[3].shape)
+
         m = list(m.values())
         x = self.decoder(m)
+        # print ('after fpn', x.shape)
         x = self.cls_seg(x)
+        # print ('after cls_seg', x.shape)
         # x = self.sm(x)
+
+      
 
         return {'out': x}
 
@@ -646,6 +659,7 @@ class FPNHEAD(nn.Module):
         )
 
         self.conv_x1 = nn.Conv2d(out_channels, out_channels, 1)
+        # print(out_channels)
 
     def forward(self, input_fpn):
         # b, 512, 7, 7
@@ -785,7 +799,7 @@ if __name__ == '__main__':
     model = vit_base_patch8()
     # model = vit_large_patch16()
     output = model(input1)
-    print((output.shape))
+    # print((output.shape))
     # for n, p in model.named_parameters():
     #     # if 'block' in n:
     #         print(n)

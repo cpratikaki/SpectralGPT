@@ -173,6 +173,8 @@ class VisionTransformer(nn.Module):
                 )
         else:
             pos_embed = self.pos_embed[:, :, :]
+        # print(x.shape,pos_embed.shape)
+        # print(self.input_size)
         x = x + pos_embed
         # reshape to [N, T, L, C] or [N, T*L, C]
         requires_t_shape = (
@@ -182,7 +184,7 @@ class VisionTransformer(nn.Module):
         )
         if requires_t_shape:
             x = x.view([N, T, L, C])
-
+        # print('posembed', pos_embed.shape)
         # apply Transformer blocks
         for blk in self.blocks:
             x = blk(x)
@@ -267,7 +269,7 @@ def vit_base_patch8_128(**kwargs):
         in_chans=1,
         patch_size=8,
         embed_dim=768,
-        depth=12,
+        depth=4,
         num_heads=12,
         mlp_ratio=4,
         num_frames=12,
@@ -370,6 +372,10 @@ def vit_base_patch8_120(**kwargs):
 if __name__ == '__main__':
     input = torch.rand(2, 12, 128, 128)
     model = vit_base_patch8_128()
+
+
+    
+
     output = model(input)
     print(output.shape)
 

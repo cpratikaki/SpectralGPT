@@ -1,0 +1,810 @@
+
+
+Epoch: 1 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(100., device='cuda:0')
+train_change_accuracy: tensor(0., device='cuda:0')
+train_recall: 0.0
+train_Fmeasure: nan
+
+
+Epoch: 1 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(100., device='cuda:0')
+train_change_accuracy: tensor(0., device='cuda:0')
+train_recall: 0.0
+train_Fmeasure: nan
+test_loss: 0.32931289076805115
+test_nochange_accuracy: tensor(100.0000, device='cuda:0')
+test_change_accuracy: tensor(0., device='cuda:0')
+test_recall: 0.0
+test_Fmeasure: nan
+
+
+Epoch: 2 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(100., device='cuda:0')
+train_change_accuracy: tensor(0., device='cuda:0')
+train_recall: 0.0
+train_Fmeasure: nan
+test_loss: 0.3178594410419464
+test_nochange_accuracy: tensor(100.0000, device='cuda:0')
+test_change_accuracy: tensor(0., device='cuda:0')
+test_recall: 0.0
+test_Fmeasure: nan
+
+
+Epoch: 3 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(100., device='cuda:0')
+train_change_accuracy: tensor(0., device='cuda:0')
+train_recall: 0.0
+train_Fmeasure: nan
+test_loss: 0.3316349387168884
+test_nochange_accuracy: tensor(100.0000, device='cuda:0')
+test_change_accuracy: tensor(0., device='cuda:0')
+test_recall: 0.0
+test_Fmeasure: nan
+
+
+Epoch: 4 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(97.1821, device='cuda:0')
+train_change_accuracy: tensor(15.8854, device='cuda:0')
+train_recall: 0.09943477598642962
+train_Fmeasure: 0.08782013245716518
+test_loss: 0.409635454416275
+test_nochange_accuracy: tensor(97.7853, device='cuda:0')
+test_change_accuracy: tensor(10.9724, device='cuda:0')
+test_recall: 0.09681907344311746
+test_Fmeasure: 0.08829740720313432
+
+
+Epoch: 5 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(98.7994, device='cuda:0')
+train_change_accuracy: tensor(9.2830, device='cuda:0')
+train_recall: 0.09133888127216432
+train_Fmeasure: 0.11131467719962469
+test_loss: 0.3101654648780823
+test_nochange_accuracy: tensor(98.6615, device='cuda:0')
+test_change_accuracy: tensor(7.6327, device='cuda:0')
+test_recall: 0.09344115379874952
+test_Fmeasure: 0.1134435559342925
+
+
+Epoch: 6 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(99.9358, device='cuda:0')
+train_change_accuracy: tensor(0.3533, device='cuda:0')
+train_recall: 0.022691077810521036
+train_Fmeasure: 0.04169779182597307
+test_loss: 0.3784947991371155
+test_nochange_accuracy: tensor(99.8111, device='cuda:0')
+test_change_accuracy: tensor(3.0035, device='cuda:0')
+test_recall: 0.022396213053351075
+test_Fmeasure: 0.0412209015077676
+
+
+Epoch: 7 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(89.9761, device='cuda:0')
+train_change_accuracy: tensor(25.0614, device='cuda:0')
+train_recall: 0.2647427986130351
+train_Fmeasure: 0.09569333341425815
+test_loss: 0.40270838141441345
+test_nochange_accuracy: tensor(89.8677, device='cuda:0')
+test_change_accuracy: tensor(23.8001, device='cuda:0')
+test_recall: 0.26776227968840416
+test_Fmeasure: 0.09675970450534235
+
+
+Epoch: 8 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(85.9326, device='cuda:0')
+train_change_accuracy: tensor(37.5145, device='cuda:0')
+train_recall: 0.37658790239216466
+train_Fmeasure: 0.10761387998311175
+test_loss: 0.3839687705039978
+test_nochange_accuracy: tensor(86.7673, device='cuda:0')
+test_change_accuracy: tensor(38.5730, device='cuda:0')
+test_recall: 0.3842472378143168
+test_Fmeasure: 0.10941035007945334
+
+
+Epoch: 9 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(91.7229, device='cuda:0')
+train_change_accuracy: tensor(40.0681, device='cuda:0')
+train_recall: 0.33510436115601333
+train_Fmeasure: 0.14184688079457025
+test_loss: 0.32410362362861633
+test_nochange_accuracy: tensor(91.7584, device='cuda:0')
+test_change_accuracy: tensor(33.7748, device='cuda:0')
+test_recall: 0.3351660862716917
+test_Fmeasure: 0.14200034959542074
+
+
+Epoch: 10 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(95.9596, device='cuda:0')
+train_change_accuracy: tensor(30.3628, device='cuda:0')
+train_recall: 0.29168777822954783
+train_Fmeasure: 0.19166320150653973
+test_loss: 0.2787894010543823
+test_nochange_accuracy: tensor(95.7698, device='cuda:0')
+test_change_accuracy: tensor(27.0324, device='cuda:0')
+test_recall: 0.2901313356883373
+test_Fmeasure: 0.1912788627801233
+
+
+Epoch: 11 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(94.0661, device='cuda:0')
+train_change_accuracy: tensor(33.2958, device='cuda:0')
+train_recall: 0.3552897004222405
+train_Fmeasure: 0.18254523020801203
+test_loss: 0.2921929657459259
+test_nochange_accuracy: tensor(93.8080, device='cuda:0')
+test_change_accuracy: tensor(34.9130, device='cuda:0')
+test_recall: 0.3577335976619866
+test_Fmeasure: 0.18272935203458546
+
+
+Epoch: 12 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(90.8360, device='cuda:0')
+train_change_accuracy: tensor(40.9802, device='cuda:0')
+train_recall: 0.41132796944292127
+train_Fmeasure: 0.15455066410079746
+test_loss: 0.3263358175754547
+test_nochange_accuracy: tensor(90.4251, device='cuda:0')
+test_change_accuracy: tensor(40.7969, device='cuda:0')
+test_recall: 0.4084337273891418
+test_Fmeasure: 0.15255719158561837
+
+
+Epoch: 13 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(93.1726, device='cuda:0')
+train_change_accuracy: tensor(40.0820, device='cuda:0')
+train_recall: 0.38679455675122504
+train_Fmeasure: 0.1949274270081714
+test_loss: 0.2886810004711151
+test_nochange_accuracy: tensor(93.7545, device='cuda:0')
+test_change_accuracy: tensor(38.9582, device='cuda:0')
+test_recall: 0.38168402977248655
+test_Fmeasure: 0.19408702265911892
+
+
+Epoch: 14 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(94.8189, device='cuda:0')
+train_change_accuracy: tensor(34.9548, device='cuda:0')
+train_recall: 0.3763370657143811
+train_Fmeasure: 0.22056773094059665
+test_loss: 0.2684994637966156
+test_nochange_accuracy: tensor(94.8516, device='cuda:0')
+test_change_accuracy: tensor(36.6211, device='cuda:0')
+test_recall: 0.3769190113996954
+test_Fmeasure: 0.22057672935676634
+
+
+Epoch: 15 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(93.8882, device='cuda:0')
+train_change_accuracy: tensor(39.8959, device='cuda:0')
+train_recall: 0.42746183711745844
+train_Fmeasure: 0.2206183524527148
+test_loss: 0.27095529437065125
+test_nochange_accuracy: tensor(93.8346, device='cuda:0')
+test_change_accuracy: tensor(42.6631, device='cuda:0')
+test_recall: 0.42720342930914545
+test_Fmeasure: 0.22156745477120696
+
+
+Epoch: 16 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(94.7673, device='cuda:0')
+train_change_accuracy: tensor(43.4021, device='cuda:0')
+train_recall: 0.4351830402143765
+train_Fmeasure: 0.2431538956677488
+test_loss: 0.26286816596984863
+test_nochange_accuracy: tensor(94.5701, device='cuda:0')
+test_change_accuracy: tensor(43.3719, device='cuda:0')
+test_recall: 0.431452463666996
+test_Fmeasure: 0.2403295389422056
+
+
+Epoch: 17 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(94.4246, device='cuda:0')
+train_change_accuracy: tensor(40.6618, device='cuda:0')
+train_recall: 0.41942030678352865
+train_Fmeasure: 0.22434288991209525
+test_loss: 0.28356826305389404
+test_nochange_accuracy: tensor(94.3014, device='cuda:0')
+test_change_accuracy: tensor(40.8693, device='cuda:0')
+test_recall: 0.4158852050461983
+test_Fmeasure: 0.22250971257918709
+
+
+Epoch: 18 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(93.2644, device='cuda:0')
+train_change_accuracy: tensor(41.6975, device='cuda:0')
+train_recall: 0.4256713344230113
+train_Fmeasure: 0.20116897638161307
+test_loss: 0.2952811121940613
+test_nochange_accuracy: tensor(93.1373, device='cuda:0')
+test_change_accuracy: tensor(42.1505, device='cuda:0')
+test_recall: 0.42099073108876806
+test_Fmeasure: 0.20136278864585933
+
+
+Epoch: 19 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(92.0141, device='cuda:0')
+train_change_accuracy: tensor(46.0972, device='cuda:0')
+train_recall: 0.46661925727612136
+train_Fmeasure: 0.19667883568823444
+test_loss: 0.303779661655426
+test_nochange_accuracy: tensor(92.1918, device='cuda:0')
+test_change_accuracy: tensor(45.5409, device='cuda:0')
+test_recall: 0.46245537364971995
+test_Fmeasure: 0.19661255090698926
+
+
+Epoch: 20 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(91.8596, device='cuda:0')
+train_change_accuracy: tensor(56.0920, device='cuda:0')
+train_recall: 0.5113486927798098
+train_Fmeasure: 0.20735283989042613
+test_loss: 0.30252325534820557
+test_nochange_accuracy: tensor(91.7359, device='cuda:0')
+test_change_accuracy: tensor(51.5887, device='cuda:0')
+test_recall: 0.5092887567709846
+test_Fmeasure: 0.20804461359912618
+
+
+Epoch: 21 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(93.0050, device='cuda:0')
+train_change_accuracy: tensor(45.1532, device='cuda:0')
+train_recall: 0.47035861843785187
+train_Fmeasure: 0.21552598037194143
+test_loss: 0.28930550813674927
+test_nochange_accuracy: tensor(93.1201, device='cuda:0')
+test_change_accuracy: tensor(46.2049, device='cuda:0')
+test_recall: 0.47706586838856313
+test_Fmeasure: 0.21853306201307449
+
+
+Epoch: 22 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(93.1763, device='cuda:0')
+train_change_accuracy: tensor(47.1537, device='cuda:0')
+train_recall: 0.5253193207016607
+train_Fmeasure: 0.22437845654608682
+test_loss: 0.2857741117477417
+test_nochange_accuracy: tensor(92.3525, device='cuda:0')
+test_change_accuracy: tensor(51.7301, device='cuda:0')
+test_recall: 0.5181607572222094
+test_Fmeasure: 0.22092214926197334
+
+
+Epoch: 23 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(91.3869, device='cuda:0')
+train_change_accuracy: tensor(50.3058, device='cuda:0')
+train_recall: 0.5146805773664339
+train_Fmeasure: 0.20182704154142656
+test_loss: 0.29766517877578735
+test_nochange_accuracy: tensor(91.4464, device='cuda:0')
+test_change_accuracy: tensor(50.7484, device='cuda:0')
+test_recall: 0.51312207931113
+test_Fmeasure: 0.2026180398768932
+
+
+Epoch: 24 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(91.9650, device='cuda:0')
+train_change_accuracy: tensor(48.9623, device='cuda:0')
+train_recall: 0.5372163291009903
+train_Fmeasure: 0.2184846227203552
+test_loss: 0.2936616539955139
+test_nochange_accuracy: tensor(91.6744, device='cuda:0')
+test_change_accuracy: tensor(53.1196, device='cuda:0')
+test_recall: 0.533989141356641
+test_Fmeasure: 0.21671415061107407
+
+
+Epoch: 25 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(88.9420, device='cuda:0')
+train_change_accuracy: tensor(61.2301, device='cuda:0')
+train_recall: 0.6210836189570772
+train_Fmeasure: 0.20562808735659635
+test_loss: 0.31435826420783997
+test_nochange_accuracy: tensor(89.4772, device='cuda:0')
+test_change_accuracy: tensor(61.1683, device='cuda:0')
+test_recall: 0.6149840086735451
+test_Fmeasure: 0.20145877308267005
+
+
+Epoch: 26 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(88.5058, device='cuda:0')
+train_change_accuracy: tensor(60.4344, device='cuda:0')
+train_recall: 0.628598315708646
+train_Fmeasure: 0.2037201649875218
+test_loss: 0.3079494833946228
+test_nochange_accuracy: tensor(89.1926, device='cuda:0')
+test_change_accuracy: tensor(62.0119, device='cuda:0')
+test_recall: 0.6265842484912167
+test_Fmeasure: 0.20360564676717385
+
+
+Epoch: 27 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(86.2883, device='cuda:0')
+train_change_accuracy: tensor(60.4148, device='cuda:0')
+train_recall: 0.624507817537241
+train_Fmeasure: 0.17073970795957347
+test_loss: 0.36205536127090454
+test_nochange_accuracy: tensor(86.0919, device='cuda:0')
+test_change_accuracy: tensor(63.1201, device='cuda:0')
+test_recall: 0.623590705602918
+test_Fmeasure: 0.17078309315402437
+
+
+Epoch: 28 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(93.4180, device='cuda:0')
+train_change_accuracy: tensor(58.6681, device='cuda:0')
+train_recall: 0.568375773900878
+train_Fmeasure: 0.26489678243415854
+test_loss: 0.25677260756492615
+test_nochange_accuracy: tensor(93.2664, device='cuda:0')
+test_change_accuracy: tensor(54.3334, device='cuda:0')
+test_recall: 0.55899869855044
+test_Fmeasure: 0.2580667871533196
+
+
+Epoch: 29 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(95.3400, device='cuda:0')
+train_change_accuracy: tensor(55.6669, device='cuda:0')
+train_recall: 0.5111808765006681
+train_Fmeasure: 0.3047106730438262
+test_loss: 0.2286435067653656
+test_nochange_accuracy: tensor(95.2927, device='cuda:0')
+test_change_accuracy: tensor(50.4871, device='cuda:0')
+test_recall: 0.5113526928307468
+test_Fmeasure: 0.3016528594622738
+
+
+Epoch: 30 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(90.5002, device='cuda:0')
+train_change_accuracy: tensor(59.7282, device='cuda:0')
+train_recall: 0.6054887757058426
+train_Fmeasure: 0.21758731913281104
+test_loss: 0.2969450354576111
+test_nochange_accuracy: tensor(90.2502, device='cuda:0')
+test_change_accuracy: tensor(60.2256, device='cuda:0')
+test_recall: 0.6072108243836916
+test_Fmeasure: 0.21676617412587307
+
+
+Epoch: 31 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(92.8301, device='cuda:0')
+train_change_accuracy: tensor(55.2538, device='cuda:0')
+train_recall: 0.5738421515615164
+train_Fmeasure: 0.25164553143546653
+test_loss: 0.2580130398273468
+test_nochange_accuracy: tensor(92.8076, device='cuda:0')
+test_change_accuracy: tensor(55.3809, device='cuda:0')
+test_recall: 0.5725082881238027
+test_Fmeasure: 0.25093255737722936
+
+
+Epoch: 32 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(90.8943, device='cuda:0')
+train_change_accuracy: tensor(61.7778, device='cuda:0')
+train_recall: 0.6166424693057175
+train_Fmeasure: 0.24171175416478544
+test_loss: 0.27294933795928955
+test_nochange_accuracy: tensor(91.5793, device='cuda:0')
+test_change_accuracy: tensor(61.5152, device='cuda:0')
+test_recall: 0.6199098803627346
+test_Fmeasure: 0.2424021872225231
+
+
+Epoch: 33 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(89.4355, device='cuda:0')
+train_change_accuracy: tensor(61.1792, device='cuda:0')
+train_recall: 0.6634005414781895
+train_Fmeasure: 0.21404822833750745
+test_loss: 0.30510371923446655
+test_nochange_accuracy: tensor(89.2232, device='cuda:0')
+test_change_accuracy: tensor(65.4572, device='cuda:0')
+test_recall: 0.6655713321788104
+test_Fmeasure: 0.21507540130831287
+
+
+Epoch: 34 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(92.3104, device='cuda:0')
+train_change_accuracy: tensor(65.3961, device='cuda:0')
+train_recall: 0.6035783501626236
+train_Fmeasure: 0.2716813649092729
+test_loss: 0.2482650727033615
+test_nochange_accuracy: tensor(93.4269, device='cuda:0')
+test_change_accuracy: tensor(58.0907, device='cuda:0')
+test_recall: 0.5984766982036653
+test_Fmeasure: 0.2723250992622701
+
+
+Epoch: 35 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(94.8831, device='cuda:0')
+train_change_accuracy: tensor(54.7407, device='cuda:0')
+train_recall: 0.5523130751913741
+train_Fmeasure: 0.29396423972918007
+test_loss: 0.23259587585926056
+test_nochange_accuracy: tensor(94.7222, device='cuda:0')
+test_change_accuracy: tensor(53.6970, device='cuda:0')
+test_recall: 0.5506155250607377
+test_Fmeasure: 0.2935940255980556
+
+
+Epoch: 36 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(91.4921, device='cuda:0')
+train_change_accuracy: tensor(64.4881, device='cuda:0')
+train_recall: 0.6437191465567245
+train_Fmeasure: 0.24358485970439608
+test_loss: 0.2803429961204529
+test_nochange_accuracy: tensor(91.0629, device='cuda:0')
+test_change_accuracy: tensor(63.7683, device='cuda:0')
+test_recall: 0.6418548685285264
+test_Fmeasure: 0.23997966154911982
+
+
+Epoch: 37 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(89.1796, device='cuda:0')
+train_change_accuracy: tensor(69.0572, device='cuda:0')
+train_recall: 0.6642718948579815
+train_Fmeasure: 0.2301298309211455
+test_loss: 0.29714277386665344
+test_nochange_accuracy: tensor(90.0528, device='cuda:0')
+test_change_accuracy: tensor(64.9580, device='cuda:0')
+test_recall: 0.6631397313958517
+test_Fmeasure: 0.22344605835488127
+
+
+Epoch: 38 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(92.6154, device='cuda:0')
+train_change_accuracy: tensor(64.1194, device='cuda:0')
+train_recall: 0.5920483163495055
+train_Fmeasure: 0.25425672687293294
+test_loss: 0.2615777850151062
+test_nochange_accuracy: tensor(92.8744, device='cuda:0')
+test_change_accuracy: tensor(59.0775, device='cuda:0')
+test_recall: 0.5957108567632553
+test_Fmeasure: 0.25712129463657774
+
+
+Epoch: 39 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(92.7304, device='cuda:0')
+train_change_accuracy: tensor(61.9101, device='cuda:0')
+train_recall: 0.6225390091021238
+train_Fmeasure: 0.25087828688395525
+test_loss: 0.2640857696533203
+test_nochange_accuracy: tensor(92.1849, device='cuda:0')
+test_change_accuracy: tensor(61.5352, device='cuda:0')
+test_recall: 0.6267095887377611
+test_Fmeasure: 0.25650125833564535
+
+
+Epoch: 40 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(93.7692, device='cuda:0')
+train_change_accuracy: tensor(59.5268, device='cuda:0')
+train_recall: 0.6033159291313721
+train_Fmeasure: 0.281244882522205
+test_loss: 0.24260734021663666
+test_nochange_accuracy: tensor(93.8334, device='cuda:0')
+test_change_accuracy: tensor(59.1640, device='cuda:0')
+test_recall: 0.600668063514081
+test_Fmeasure: 0.282589157381359
+
+
+Epoch: 41 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(97.0800, device='cuda:0')
+train_change_accuracy: tensor(49.0232, device='cuda:0')
+train_recall: 0.493159565664209
+train_Fmeasure: 0.3457731111965309
+test_loss: 0.20501071214675903
+test_nochange_accuracy: tensor(96.9958, device='cuda:0')
+test_change_accuracy: tensor(47.7149, device='cuda:0')
+test_recall: 0.4981084067792361
+test_Fmeasure: 0.353853060225051
+
+
+Epoch: 42 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(94.6795, device='cuda:0')
+train_change_accuracy: tensor(55.4041, device='cuda:0')
+train_recall: 0.5579593376790416
+train_Fmeasure: 0.3164508772075019
+test_loss: 0.21983183920383453
+test_nochange_accuracy: tensor(95.5433, device='cuda:0')
+test_change_accuracy: tensor(54.5631, device='cuda:0')
+test_recall: 0.5607471949897326
+test_Fmeasure: 0.3215571132597926
+
+
+Epoch: 43 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(92.6615, device='cuda:0')
+train_change_accuracy: tensor(60.2015, device='cuda:0')
+train_recall: 0.6160073255488947
+train_Fmeasure: 0.26765217407066033
+test_loss: 0.252453476190567
+test_nochange_accuracy: tensor(92.7353, device='cuda:0')
+test_change_accuracy: tensor(60.4395, device='cuda:0')
+test_recall: 0.6191954409574324
+test_Fmeasure: 0.27234979767203393
+
+
+Epoch: 44 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(91.3993, device='cuda:0')
+train_change_accuracy: tensor(67.6537, device='cuda:0')
+train_recall: 0.6403358961366106
+train_Fmeasure: 0.2482764363973296
+test_loss: 0.26969602704048157
+test_nochange_accuracy: tensor(91.5285, device='cuda:0')
+test_change_accuracy: tensor(63.9954, device='cuda:0')
+test_recall: 0.6452683012427486
+test_Fmeasure: 0.25287141778862765
+
+
+Epoch: 45 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(94.1643, device='cuda:0')
+train_change_accuracy: tensor(59.6659, device='cuda:0')
+train_recall: 0.5906895962169578
+train_Fmeasure: 0.29170753154511203
+test_loss: 0.2292536050081253
+test_nochange_accuracy: tensor(94.5903, device='cuda:0')
+test_change_accuracy: tensor(58.6740, device='cuda:0')
+test_recall: 0.5965945055013924
+test_Fmeasure: 0.305023323622945
+
+
+Epoch: 46 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(95.0884, device='cuda:0')
+train_change_accuracy: tensor(52.7000, device='cuda:0')
+train_recall: 0.5926175392353538
+train_Fmeasure: 0.30851160263518856
+test_loss: 0.22157995402812958
+test_nochange_accuracy: tensor(94.6898, device='cuda:0')
+test_change_accuracy: tensor(57.6964, device='cuda:0')
+test_recall: 0.5937785279623645
+test_Fmeasure: 0.31577257575614504
+
+
+Epoch: 47 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(94.2929, device='cuda:0')
+train_change_accuracy: tensor(59.4154, device='cuda:0')
+train_recall: 0.5920608443129649
+train_Fmeasure: 0.28990762288793354
+test_loss: 0.23477803170681
+test_nochange_accuracy: tensor(94.2638, device='cuda:0')
+test_change_accuracy: tensor(57.5674, device='cuda:0')
+test_recall: 0.5911860738630073
+test_Fmeasure: 0.2957739192325319
+
+
+Epoch: 48 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(94.9352, device='cuda:0')
+train_change_accuracy: tensor(55.7421, device='cuda:0')
+train_recall: 0.5753106334379546
+train_Fmeasure: 0.30522769980434616
+test_loss: 0.22925744950771332
+test_nochange_accuracy: tensor(94.6880, device='cuda:0')
+test_change_accuracy: tensor(56.7820, device='cuda:0')
+test_recall: 0.5764711289187106
+test_Fmeasure: 0.3045849160626863
+
+
+Epoch: 49 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(93.6204, device='cuda:0')
+train_change_accuracy: tensor(65.9367, device='cuda:0')
+train_recall: 0.6185412741550927
+train_Fmeasure: 0.2884357840517032
+test_loss: 0.2351938784122467
+test_nochange_accuracy: tensor(93.8680, device='cuda:0')
+test_change_accuracy: tensor(60.8846, device='cuda:0')
+test_recall: 0.618597985782238
+test_Fmeasure: 0.2966234801754172
+
+
+Epoch: 50 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(95.1447, device='cuda:0')
+train_change_accuracy: tensor(59.2220, device='cuda:0')
+train_recall: 0.5582147733550129
+train_Fmeasure: 0.32086156117223313
+test_loss: 0.21229159832000732
+test_nochange_accuracy: tensor(95.7619, device='cuda:0')
+test_change_accuracy: tensor(54.3035, device='cuda:0')
+test_recall: 0.5586581908806615
+test_Fmeasure: 0.33443675067561907
+
+
+Epoch: 51 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(95.9743, device='cuda:0')
+train_change_accuracy: tensor(48.4059, device='cuda:0')
+train_recall: 0.5467390330171474
+train_Fmeasure: 0.3286309102104658
+test_loss: 0.2143312692642212
+test_nochange_accuracy: tensor(95.7824, device='cuda:0')
+test_change_accuracy: tensor(53.1703, device='cuda:0')
+test_recall: 0.545480752960641
+test_Fmeasure: 0.3292774735217381
+
+
+Epoch: 52 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(95.2122, device='cuda:0')
+train_change_accuracy: tensor(56.5401, device='cuda:0')
+train_recall: 0.5742517067799933
+train_Fmeasure: 0.3265213929628591
+test_loss: 0.21219085156917572
+test_nochange_accuracy: tensor(95.6930, device='cuda:0')
+test_change_accuracy: tensor(55.1663, device='cuda:0')
+test_recall: 0.5599491954200674
+test_Fmeasure: 0.33437224587860254
+
+
+Epoch: 53 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(94.1515, device='cuda:0')
+train_change_accuracy: tensor(63.2747, device='cuda:0')
+train_recall: 0.580092226970867
+train_Fmeasure: 0.30250457199299774
+test_loss: 0.2200208306312561
+test_nochange_accuracy: tensor(95.0566, device='cuda:0')
+test_change_accuracy: tensor(56.6073, device='cuda:0')
+test_recall: 0.5770476940528142
+test_Fmeasure: 0.3179190951026158
+
+
+
+Epoch: 1 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(100., device='cuda:0')
+train_change_accuracy: tensor(0., device='cuda:0')
+train_recall: 0.0
+train_Fmeasure: nan
+test_loss: 0.32580962777137756
+test_nochange_accuracy: tensor(100.0000, device='cuda:0')
+test_change_accuracy: tensor(0., device='cuda:0')
+test_recall: 0.0
+test_Fmeasure: nan
+
+
+Epoch: 2 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(100., device='cuda:0')
+train_change_accuracy: tensor(0., device='cuda:0')
+train_recall: 0.0
+train_Fmeasure: nan
+test_loss: 0.3183544874191284
+test_nochange_accuracy: tensor(100.0000, device='cuda:0')
+test_change_accuracy: tensor(0., device='cuda:0')
+test_recall: 0.0
+test_Fmeasure: nan
+
+
+Epoch: 1 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(100., device='cuda:0')
+train_change_accuracy: tensor(0., device='cuda:0')
+train_recall: 0.0
+train_Fmeasure: nan
+test_loss: 0.29766470193862915
+test_nochange_accuracy: tensor(100.0000, device='cuda:0')
+test_change_accuracy: tensor(0., device='cuda:0')
+test_recall: 0.0
+test_Fmeasure: nan
+
+
+Epoch: 2 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(99.6508, device='cuda:0')
+train_change_accuracy: tensor(5.5414, device='cuda:0')
+train_recall: 0.06899821228676925
+train_Fmeasure: 0.11469815270636674
+test_loss: 0.25979340076446533
+test_nochange_accuracy: tensor(99.6865, device='cuda:0')
+test_change_accuracy: tensor(6.3065, device='cuda:0')
+test_recall: 0.06866974307338462
+test_Fmeasure: 0.11395391161915985
+
+
+Epoch: 3 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(97.9977, device='cuda:0')
+train_change_accuracy: tensor(20.9380, device='cuda:0')
+train_recall: 0.2330856684347092
+train_Fmeasure: 0.21998379203449306
+test_loss: 0.2675771713256836
+test_nochange_accuracy: tensor(97.8025, device='cuda:0')
+test_change_accuracy: tensor(22.9531, device='cuda:0')
+test_recall: 0.22876892898848333
+test_Fmeasure: 0.21642703979288333
+
+
+Epoch: 1 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(100., device='cuda:0')
+train_change_accuracy: tensor(0., device='cuda:0')
+train_recall: 0.0
+train_Fmeasure: nan
+test_loss: 0.3603387475013733
+test_nochange_accuracy: tensor(100.0000, device='cuda:0')
+test_change_accuracy: tensor(0., device='cuda:0')
+test_recall: 0.0
+test_Fmeasure: nan
+
+
+Epoch: 2 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(100., device='cuda:0')
+train_change_accuracy: tensor(0., device='cuda:0')
+train_recall: 0.0
+train_Fmeasure: nan
+test_loss: 0.33941683173179626
+test_nochange_accuracy: tensor(100.0000, device='cuda:0')
+test_change_accuracy: tensor(0., device='cuda:0')
+test_recall: 0.0
+test_Fmeasure: nan
+
+
+Epoch: 3 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(100., device='cuda:0')
+train_change_accuracy: tensor(0., device='cuda:0')
+train_recall: 0.0010168785163575745
+train_Fmeasure: 0.0020310145916745052
+test_loss: 0.32159754633903503
+test_nochange_accuracy: tensor(99.9994, device='cuda:0')
+test_change_accuracy: tensor(0.2338, device='cuda:0')
+test_recall: 0.0010716591079534654
+test_Fmeasure: 0.002140447574680967
+
+
+Epoch: 4 of 300
+train_loss: 0.0
+train_nochange_accuracy: tensor(100., device='cuda:0')
+train_change_accuracy: tensor(0., device='cuda:0')
+train_recall: 0.0
+train_Fmeasure: nan

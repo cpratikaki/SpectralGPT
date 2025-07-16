@@ -45,8 +45,12 @@ def train_one_epoch(model, optimizer, data_loader, device, epoch, lr_scheduler, 
         image, target = image.to(device), target.to(device)
 
         with torch.cuda.amp.autocast(enabled=scaler is not None):
+            
             output = model(image)
             loss = criterion(output, target)
+            # print(output['out'].shape)
+            # print(target.shape)
+            # print(output[0].shape,target.shape)
 
         # loss = loss / accumiter
         # loss.backward()

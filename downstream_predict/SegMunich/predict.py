@@ -7,8 +7,9 @@ from src.models_vit_tensor_CD_2 import vit_base_patch16
 import numpy as np
 from PIL import Image
 import skimage.io as io
-
-os.environ["CUDA_VISIBLE_DEVICES"] = "4,5,6,7"
+import sys
+sys.path.append('./src')
+# os.environ["CUDA_VISIBLE_DEVICES"] = "4,5,6,7"
 
 
 def time_synchronized():
@@ -23,8 +24,8 @@ def open_image(img_path):
 
 def main():
     classes = 1
-    weights_path = "checkpoint.pth"
-    palette_path = "palette.json"
+    weights_path = "/home/tiiairc/GenAI/SpectralGPT/multi_train_seg/model_multi_2.pth"
+    palette_path = "/home/tiiairc/GenAI/SpectralGPT/downstream_predict/SegMunich/palette.json"
     # use_CRF = True
     assert os.path.exists(weights_path), f"weights {weights_path} not found."
     assert os.path.exists(palette_path), f"palette {palette_path} not found."

@@ -30,7 +30,7 @@ class MaskedAutoencoderViT(nn.Module):
             depth=24,
             num_heads=16,
             decoder_embed_dim=512,
-            decoder_depth=4,
+            decoder_depth=12,
             decoder_num_heads=16,
             mlp_ratio=4.0,
             norm_layer=nn.LayerNorm,
@@ -317,6 +317,9 @@ class MaskedAutoencoderViT(nn.Module):
                 )
         x = x.view([N, -1, C]) + pos_embed
 
+        
+
+
         # apply Transformer blocks
         for blk in self.blocks:
             x = blk(x)
@@ -386,9 +389,11 @@ class MaskedAutoencoderViT(nn.Module):
         for blk in self.decoder_blocks:
             x = blk(x)
         x = self.decoder_norm(x)
+        # print('xx!!before prediction',x.shape)
 
         # predictor projection
         x = self.decoder_pred(x)
+        # print('xx!!after prediction',x.shape)
 
         if requires_t_shape:
             x = x.view([N, T * H * W, -1])
@@ -431,6 +436,7 @@ class MaskedAutoencoderViT(nn.Module):
                 .long()
                 .to(imgs.device),
         )
+        # print(_imgs.shape)
         target1 = self.patchify(_imgs)
 
         N, C, T, H, W = imgs.shape
@@ -468,6 +474,7 @@ class MaskedAutoencoderViT(nn.Module):
         # print(imgs.shape,'!!!!!!!!!!!!!!')
         latent, mask, ids_restore = self.forward_encoder(imgs, mask_ratio)
         pred = self.forward_decoder(latent, ids_restore)  # [N, L, p*p*3]
+        # print(pred.shape)
         loss = self.forward_loss(imgs, pred, mask)
         return loss, pred, mask
 
@@ -503,7 +510,7 @@ def mae_vit_base_patch8_128(**kwargs):
         num_frames=12,
         pred_t_dim=12,
         t_patch_size=3,
-        mask_ratio=0.75,
+        mask_ratio=0.1,
         norm_layer=partial(nn.LayerNorm, eps=1e-6),
         **kwargs,
     )
@@ -610,5 +617,5 @@ if __name__ == '__main__':
     input = torch.rand(2, 12, 128, 128)
     model = mae_vit_base_patch8_128()
     output = model(input)
-    print(output.shape)
+    # print(output.shape)
 

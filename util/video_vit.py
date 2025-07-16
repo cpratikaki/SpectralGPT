@@ -228,8 +228,11 @@ class Block(nn.Module):
         )
 
     def forward(self, x):
+        # print(x.shape,'prin apo att')
         x = x + self.drop_path(self.attn(self.norm1(x)))
+        # print(x.shape,'prin apo mlp')
         x = x + self.drop_path(self.mlp(self.norm2(x)))
+        # print(x.shape,'outputsize')
         return x
 
 class Linear_Block(nn.Module):

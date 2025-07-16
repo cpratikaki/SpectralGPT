@@ -25,7 +25,7 @@ def create_model(nb_classes, weight_path, pretrain=False):
     # model = vit_large_patch8(num_classes=nb_classes)
 
     if pretrain:
-        checkpoint = torch.load(weight_path, map_location='cpu')
+        checkpoint = torch.load(weight_path, map_location='cpu', weights_only=False)
         print("Load pre-trained checkpoint from: %s" % weight_path)
         checkpoint_model = checkpoint['model']
         # checkpoint_model = checkpoint
@@ -45,6 +45,7 @@ def create_model(nb_classes, weight_path, pretrain=False):
         # print(model)
         msg = model.load_state_dict(checkpoint_model, strict=False)
         print(msg)
+        print("Load pre-trained checkpoint from: %s" % weight_path)
     return model
 
 def create_model_Unet(num_classes, weights, pretrain=False):
@@ -73,7 +74,7 @@ def main(args):
     data_root = args.data_path
     # check data root
     train_dataset = SegDataset(args.data_path, txt_name="train.txt", training=True, data_name="BigEarthNet")
-    val_dataset = SegDataset(args.data_path, txt_name="test.txt", training=False, data_name="BigEarthNet")
+    val_dataset = SegDataset(args.data_path, txt_name="val.txt", training=False, data_name="BigEarthNet")
 
     print("Creating data loaders")
     if args.distributed:
@@ -232,7 +233,7 @@ if __name__ == "__main__":
     # 训练过程打印信息的频率
     parser.add_argument('--print-freq', default=50, type=int, help='print frequency')
     # 文件保存地址
-    parser.add_argument('--output-dir', default='./multi_train/', help='path where to save')
+    parser.add_argument('--output-dir', default='./multi_train_seg/', help='path where to save')
     # 基于上次的训练结果接着训练
     parser.add_argument('--resume', default='', help='resume from checkpoint')
     # 不训练，仅测试
@@ -253,6 +254,7 @@ if __name__ == "__main__":
                         help="Use torch.cuda.amp for mixed precision training")
 
     args = parser.parse_args()
+    args.rank = 0
 
     # 如果指定了保存文件地址，检查文件夹是否存在，若不存在，则创建
     if args.output_dir:
